@@ -1,6 +1,12 @@
 # Messaging Form Extender: Contact
 
-Development candidate `0.1.0-dev.0`; not published. MIT licensed. Adds required-message validation and contact handler composition to `@ehven/messaging-form-core`. No Astro, WordPress, CRM or email transport is included.
+MIT licensed. Adds required-message validation and contact handler composition to `@ehven/messaging-form-core`. No Astro, WordPress, CRM or email transport is included.
+
+## Install
+
+```sh
+npm install @ehven/messaging-form-core @ehven/messaging-form-extender-contact
+```
 
 ## Shared validation
 
@@ -38,8 +44,12 @@ The helper supplies validation and the message field to core. Other transport op
 
 The package does not record or send anything on its own. Configure provider callbacks; keep credentials, site identities, authorization, logging and retention in the host. A receipt failure after accepted recording can be handled by core's optional delivery pipeline. No queue, persistent idempotency, telemetry or access grants are included.
 
-## Installation and compatibility
+## Compatibility and removal
 
-The peer requirement is `@ehven/messaging-form-core@^0.1.0-dev.0`. Current verification installs reviewed local core/extender tarballs together into a fresh offline consumer. Neither package is available from npm yet. No runtime dependencies other than that explicit core peer are required; no install hooks run. Browser rendering belongs to the host adapter. Node 24 contract tests pass; deployed framework/provider acceptance remains pending.
+Requires Node.js 24 or later and Messaging Form Core ^0.1.0. TypeScript declarations are included. Renderer, authorization and live provider behavior depend on the host application.
 
-Uninstall by removing this handler/validator from application composition and then uninstalling the package. Existing remote provider records are not deleted. This development candidate carries no public response-time SLA; release documentation will identify its support/security routes before publication.
+Remove imports and application composition before uninstalling. Previously accepted provider submissions remain subject to the host’s retention policy.
+
+## Support
+
+Patch releases within 0.1 are intended to be compatible. Future 0.x minor releases may change APIs. Open an issue for bugs and usage questions. For a security concern, use the contact form to request a private reporting channel and keep credentials, tokens and submissions out of the public tracker. [Issues](https://github.com/ehven-consultants-npm-products/ehven-messaging-form-extender-contact/issues) · [Contact](https://ehven.com/contact/)
